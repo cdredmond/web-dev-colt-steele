@@ -1,0 +1,21 @@
+body {
+	border: 20px #bdc3c7 solid;
+	margin-left: 15%;
+	margin-right: 15%;
+	font-family: Source Sans Pro;
+}
+
+h3 {
+	text-transform: uppercase;
+	color: #3498db;
+}
+
+div {
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+hr {
+	margin-left: 2%;
+	margin-right: 2%;	
+}
