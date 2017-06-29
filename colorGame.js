@@ -27,13 +27,11 @@ function pickThisColor(){
 	return squares[i].style.backgroundColor;
 };
 
-// Function to Set / Reset the screen display
-function reset(){
-	for (var i = 0; i < squares.length; i++){
-		squares[i].style.backgroundColor = colors[i] = pickColor();
-	};
-
+for (var i = 0; i < squares.length; i++){
+	squares[i].style.backgroundColor = colors[i] = pickColor();
 };
+
+correctColor = correctColorDisplay.textContent = pickThisColor();
 
 // Display the RGB of the color to pick
 
@@ -53,5 +51,3 @@ for (var i = 0; i < squares.length; i++){
 };
 
 
-correctColorDisplay.textContent = pickThisColor();
-reset();
