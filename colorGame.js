@@ -4,7 +4,12 @@ var h1 = document.querySelector("h1");
 var squares = document.querySelectorAll(".square");
 var correctColorDisplay = document.querySelector("#correctColorDisplay");
 var message = document.querySelector("#message");
+var resetButton = document.querySelector("#resetButton");
 var correctColor;
+var easyMode = 3;
+var hardMode = 6;
+var mode = hardMode;
+
 
 // Define functions
 // generate a random between 1 and 255
@@ -51,3 +56,26 @@ for (var i = 0; i < squares.length; i++){
 };
 
 
+resetButton.addEventListener("click", function(){
+	for (var i = 0; i < squares.length; i++){
+		squares[i].style.backgroundColor = colors[i] = pickColor();
+	};
+
+	correctColor = correctColorDisplay.textContent = pickThisColor();
+
+	for (var i = 0; i < squares.length; i++){
+	squares[i].addEventListener("click", function(){
+		if (this.style.backgroundColor === correctColor){
+			message.textContent = "Correct!";
+			for (var k = 0; k < squares.length; k++){
+				squares[k].style.backgroundColor = correctColor;
+			};
+		
+		} else {
+			this.style.background = "#232323";
+			message.textContent = "Try again!";
+		}
+	});
+};
+
+});
