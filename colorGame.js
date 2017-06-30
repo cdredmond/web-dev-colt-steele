@@ -5,10 +5,12 @@ var squares = document.querySelectorAll(".square");
 var correctColorDisplay = document.querySelector("#correctColorDisplay");
 var message = document.querySelector("#message");
 var resetButton = document.querySelector("#resetButton");
+var hardModeButton = document.querySelector("#hardModeButton");
+var easyModeButton = document.querySelector("#easyModeButton");
 var correctColor;
 var easyMode = 3;
 var hardMode = 6;
-var mode = hardMode;
+var mode = easyMode;
 
 
 // Define functions
@@ -28,13 +30,22 @@ function pickColor(){
 
 // select the correct color to pick
 function pickThisColor(){
-	var i = Math.floor(Math.random() * 6) + 1;
+	var i = Math.floor(Math.random() * mode) + 1;
 	return squares[i].style.backgroundColor;
 };
 
-for (var i = 0; i < squares.length; i++){
-	squares[i].style.backgroundColor = colors[i] = pickColor();
+// paint squares
+function paintSquares(){
+	for (var i = 0; i < squares.length; i++){
+		if (i < mode){
+			squares[i].style.backgroundColor = colors[i] = pickColor();
+		} else {
+			squares[i].style.backgroundColor = colors[i] = "#232323";
+		}
+	};
 };
+
+paintSquares();
 
 correctColor = correctColorDisplay.textContent = pickThisColor();
 
@@ -57,9 +68,10 @@ for (var i = 0; i < squares.length; i++){
 
 
 resetButton.addEventListener("click", function(){
-	for (var i = 0; i < squares.length; i++){
-		squares[i].style.backgroundColor = colors[i] = pickColor();
-	};
+	paintSquares();
+	// for (var i = 0; i < squares.length; i++){
+	// 	squares[i].style.backgroundColor = colors[i] = pickColor();
+	// };
 
 	correctColor = correctColorDisplay.textContent = pickThisColor();
 
@@ -75,7 +87,15 @@ resetButton.addEventListener("click", function(){
 			this.style.background = "#232323";
 			message.textContent = "Try again!";
 		}
-	});
-};
-
+		});
+	};
 });
+
+hardModeButton.addEventListener("click", function(){
+	mode = hardMode;
+});
+
+easyModeButton.addEventListener("click", function(){
+	mode = easyMode;
+});
+
