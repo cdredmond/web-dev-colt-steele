@@ -10,7 +10,7 @@ var easyModeButton = document.querySelector("#easyModeButton");
 var correctColor;
 var easyMode = 3;
 var hardMode = 6;
-var mode = easyMode;
+var mode = hardMode;
 
 
 // Define functions
