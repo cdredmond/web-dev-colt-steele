@@ -6,7 +6,7 @@ body {
 
 #container {
 	max-width: 600px;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 
 .square {
@@ -20,10 +20,22 @@ body {
 
 h1 {
 	text-align: center;
+	line-height: 1.1;
 	color: white;
 	background-color: steelblue;
 	font-weight: normal;
 	margin: 0;
+	text-transform: uppercase;
+	padding: 20px 0;
+}
+
+#correctColorDisplay {
+	font-size: 200%;
+}
+
+#message {
+	display: inline-block;
+	width: 20%;
 }
 
 span {
@@ -35,4 +47,26 @@ span {
 	height: 30px;
 	text-align: center;
 	color: black;
+}
+
+button {
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height: 100%;
+	font-weight: 700;
+	color: steelblue;
+	letter-spacing: 1px;
+	font-size: inherit;
+	transition: all 0.5s;
+}
+
+button:hover {
+	color: white;
+	background: steelblue;
+}
+
+.selected {
+	color: white;
+	background: steelblue;
 }

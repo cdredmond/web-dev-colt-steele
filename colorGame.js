@@ -93,6 +93,7 @@ resetButton.addEventListener("click", function(){
 
 hardModeButton.addEventListener("click", function(){
 	mode = hardMode;
+	
 });
 
 easyModeButton.addEventListener("click", function(){
